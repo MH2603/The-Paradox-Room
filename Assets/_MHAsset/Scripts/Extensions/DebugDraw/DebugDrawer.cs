@@ -14,7 +14,7 @@ namespace MH
             Debug.DrawRay(start, direction, color, duration, depthTest);
         }
 
-        public static void DrawSphere(Vector3 position, float radius, Color color, float duration = 0.1f)
+        public static void DrawCircle(Vector3 position, float radius, Color color, float duration = 0.1f)
         {
             int segments = 20;
             float angle = 0f;

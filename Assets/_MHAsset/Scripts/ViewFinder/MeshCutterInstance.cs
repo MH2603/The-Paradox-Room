@@ -96,11 +96,11 @@ public static class MeshCutter
         positiveObject = CreateMeshObject(target, positiveMesh, target.name + "_PositivePart");
         negativeObject = CreateMeshObject(target, negativeMesh, target.name + "_NegativePart");
 
-        intersections = intersectionPoints;
+        intersections.AddRange(intersectionPoints); 
     }
 
     // Method to generate a new mesh based on the plane and whether it's the positive or negative part
-    private static Mesh GenerateMesh(Mesh mesh, Transform target, Plane plane, bool isPositive,
+    public static Mesh GenerateMesh(Mesh mesh, Transform target, Plane plane, bool isPositive,
         out List<Vector3> intersectionPoints)
     {
         intersectionPoints = new List<Vector3>();
@@ -226,7 +226,7 @@ public static class MeshCutter
     private static void SplitTriangle(Vector3 insideA, Vector3 insideB, Vector3 outside,Vector3 normal, Vector2[] uvArray, Plane plane,
         List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections)
     {
-        // find 2 intersection points
+        // find 2 intersection points and calculate 2 intersection UVs
         Vector3 intersection1 = LinePlaneIntersection(insideA, outside, plane);
         Vector2 intersectionUV1 = CalculateIntersectionUV(insideA, outside, uvArray[0], uvArray[2], intersection1);
         Vector3 intersection2 = LinePlaneIntersection(insideB, outside, plane);
@@ -235,40 +235,9 @@ public static class MeshCutter
         intersections.Add(intersection1);
         intersections.Add(intersection2);
 
-        /*
-        // TO-DO: Set UV for new vertices
-        // [Process 01] add vertices and triangles
-        // add 3 new vertices which include 2 intersection points and 1 inside point
-        int baseIndex = newVertices.Count;
-        newVertices.Add(insideA);
-        newVertices.Add(insideB);
-        newVertices.Add(intersection1);
-        
-        // add 3 new UVs which include 2 intersection UVs and 1 inside UV
-        newUVs.AddRange( new Vector2[] { uvArray[0], uvArray[1], intersectionUV1 });
-        
-        // calculate normal of new triangle
-        var newNormal = CalculateNormal(insideA, insideB, intersection1);
-        var dot = Vector3.Dot(normal, newNormal); // compare normal of new triangle with normal of origin triangle
-        if(dot > 0) newTriangles.AddRange(new int[] { baseIndex, baseIndex + 1, baseIndex + 2 }); // if same direction then add normally with clock direction
-        else newTriangles.AddRange(new int[] { baseIndex, baseIndex + 2, baseIndex + 1 }); // if opposite direction then add reverse with counter-clock direction
-        */
-
+        // from information of new vertices and UVs, we can build 2 new triangles
         BuildTriangle(insideA, insideB, intersection1, uvArray[0], uvArray[1], intersectionUV1, normal,
                     newVertices, newTriangles, newUVs);
-        
-        /*// do same things like [process 01]
-        newVertices.Add(insideB);
-        newVertices.Add(intersection1);
-        newVertices.Add(intersection2);
-        
-        // add 3 new UVs which include 2 intersection UVs and 1 inside UV
-        newUVs.AddRange( new Vector2[] { uvArray[1], intersectionUV1, intersectionUV2 });    
-        
-        var newNormal02 = CalculateNormal(insideB, intersection1, intersection2);
-        var dot02 = Vector3.Dot(normal, newNormal02); // compare normal of new triangle with normal of origin triangle
-        if(dot02 > 0) newTriangles.AddRange(new int[] { baseIndex + 3, baseIndex + 4, baseIndex + 5 });
-        else newTriangles.AddRange(new int[] { baseIndex + 3, baseIndex + 5, baseIndex + 4 });*/
         
         BuildTriangle(insideB, intersection1, intersection2, uvArray[1], intersectionUV1, intersectionUV2, normal,
                     newVertices, newTriangles, newUVs);
@@ -278,6 +247,7 @@ public static class MeshCutter
     private static void SplitTriangle_Case02(Vector3 inside, Vector3 outsideA, Vector3 outsideB, Vector3 normal, Vector2[] uvArray, Plane plane,
         List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections)
     {
+        // find 2 intersection points and calculate 2 intersection UVs
         Vector3 intersection1 = LinePlaneIntersection(outsideA, inside, plane);
         Vector2 intersectionUV1 = CalculateIntersectionUV(outsideA, inside, uvArray[1], uvArray[0], intersection1);
         Vector3 intersection2 = LinePlaneIntersection(outsideB, inside, plane);
@@ -286,6 +256,7 @@ public static class MeshCutter
         intersections.Add(intersection1);
         intersections.Add(intersection2);
         
+        // from information of new vertices and UVs, we can build 1 new triangles
         BuildTriangle(intersection1, intersection2, inside, intersectionUV1, intersectionUV2, uvArray[0], normal, 
                     newVertices, newTriangles, newUVs);
         
@@ -355,7 +326,7 @@ public static class MeshCutter
     }
 
     // Method to create a new GameObject with the specified mesh
-    private static GameObject CreateMeshObject(GameObject original, Mesh mesh, string name)
+    public static GameObject CreateMeshObject(GameObject original, Mesh mesh, string name)
     {
 
         GameObject newObject = new GameObject(name);
