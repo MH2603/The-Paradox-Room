@@ -14,6 +14,7 @@ public class MeshCutterInstance : MonoBehaviour
     private Mesh _negativeMesh;
     
     private GameObject _positiveObject, _negativeObject;
+    private List<Vector3> _intersections = new();
 
     // Unity's Start method, called before the first frame update
     void Start()
@@ -29,43 +30,73 @@ public class MeshCutterInstance : MonoBehaviour
         Plane plane = new Plane(cuttingPlane.up, cuttingPlane.transform.position);
             
         // Call the static Cut method to perform the cut
-        MeshCutter.Cut(targetObject, plane, out _positiveObject, out _negativeObject);
+        MeshCutter.Cut(targetObject, plane, out _positiveObject, out _negativeObject,_intersections);
         
-        _positiveMesh = _positiveObject.GetComponent<MeshFilter>().mesh;
-        _negativeMesh = _negativeObject.GetComponent<MeshFilter>().mesh;
+        // _positiveMesh = _positiveObject.GetComponent<MeshFilter>().mesh;
+        // _negativeMesh = _negativeObject.GetComponent<MeshFilter>().mesh;
+        //
+        // Vector2[] uvArray = targetObject.GetComponent<MeshFilter>().mesh.uv;
+        // Vector3[] vertices = targetObject.GetComponent<MeshFilter>().mesh.vertices;
+        // var content = " Target UVs: ";
+        // foreach (var uv in uvArray)
+        // {
+        //    content += uv + "| ";
+        // }
+        //
+        // content += "\n Vertices: ";
+        // foreach (var vertex in vertices)
+        // {
+        //     content += vertex + " | ";
+        // }
+        // Debug.Log(content);
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        if (_positiveMesh) GizmosDrawer.DrawSpheres(MeshCutter.ConvertVerticesToWorldSpace(_positiveMesh, _positiveObject.transform), 0.1f);
-        if (_negativeMesh) GizmosDrawer.DrawSpheres( MeshCutter.ConvertVerticesToWorldSpace(_negativeMesh, _negativeObject.transform), 0.1f);
+        // if (_positiveMesh) GizmosDrawer.DrawSpheres(MeshCutter.ConvertVerticesToWorldSpace(_positiveMesh, _positiveObject.transform), 0.1f);
+        // if (_negativeMesh) GizmosDrawer.DrawSpheres( MeshCutter.ConvertVerticesToWorldSpace(_negativeMesh, _negativeObject.transform), 0.1f);
+
+        for (int i=0; i < _intersections.Count; i++)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(_intersections[i], 0.05f);
+            
+        }
+   
     }
 }
 
 public static class MeshCutter
 {
     // Static method to cut the target object using the specified plane
-    public static void Cut(GameObject target, Plane plane, out GameObject positiveObject, out GameObject negativeObject)
+    public static void Cut(GameObject target, Plane plane, out GameObject positiveObject, out GameObject negativeObject, List<Vector3> intersections)
     {
         // Get the MeshFilter component from the target object
         MeshFilter meshFilter = target.GetComponent<MeshFilter>();
-        if (meshFilter == null)
+        var skinnedMeshRenderer = target.GetComponent<SkinnedMeshRenderer>();
+        Mesh mesh = null;
+        if (meshFilter != null) mesh = meshFilter.mesh;
+        if (skinnedMeshRenderer != null)  mesh = skinnedMeshRenderer.sharedMesh;
+        if (mesh == null)
         {
-            Debug.LogError("MeshFilter not found on target object.");
+            Debug.LogError(" Bug : Not found mesh container !");
             positiveObject = null;
             negativeObject = null;
+            // intersections = null;
             return;
         }
 
         List<Vector3> intersectionPoints;
         // Generate the positive part of the mesh
-        Mesh positiveMesh = GenerateMesh(meshFilter.mesh, target.transform, plane, true, out intersectionPoints);
+        Mesh positiveMesh = GenerateMesh(mesh, target.transform, plane, true, out intersectionPoints);
         // Generate the negative part of the mesh
-        Mesh negativeMesh = GenerateMesh(meshFilter.mesh, target.transform, plane, false, out intersectionPoints);
+        Mesh negativeMesh = GenerateMesh(mesh, target.transform, plane, false, out intersectionPoints);
 
         // Create new GameObjects for the positive and negative parts
-        positiveObject = CreateMeshObject(target, positiveMesh, "PositivePart");
-        negativeObject = CreateMeshObject(target, negativeMesh, "NegativePart");
+        positiveObject = CreateMeshObject(target, positiveMesh, target.name + "_PositivePart");
+        negativeObject = CreateMeshObject(target, negativeMesh, target.name + "_NegativePart");
+
+        intersections = intersectionPoints;
     }
 
     // Method to generate a new mesh based on the plane and whether it's the positive or negative part
@@ -74,35 +105,49 @@ public static class MeshCutter
     {
         intersectionPoints = new List<Vector3>();
 
-        List<Vector3> vertices = new List<Vector3>(mesh.vertices); // take all vertices of origin mesh
-
-        List<int> triangles = new List<int>(mesh.triangles); // take all triangles of origin mesh
+        // datas from origin mesh
+        List<Vector3> originVertices = new List<Vector3>(mesh.vertices); // take all vertices of origin mesh
+        List<int> originTriangles = new List<int>(mesh.triangles); // take all triangles of origin mesh
+        Vector2[] originUVs = mesh.uv; // take all UVs of origin mesh
+        
         List<Vector3> newVertices = new List<Vector3>(); // init a new list of vertices
         List<int> newTriangles = new List<int>(); // init a new list of triangles
-
+        List<Vector2> newUVs = new();
+        
         // Iterate through each triangle in the mesh
-        for (int i = 0; i < triangles.Count; i += 3)
+        for (int i = 0; i < originTriangles.Count; i += 3)
         {
             
-            Vector3 v0 = vertices[triangles[i]];
+            Vector3 v0 = originVertices[originTriangles[i]];
             v0 = target.TransformPoint(v0);
-            Vector3 v1 = vertices[triangles[i + 1]];
+            Vector3 v1 = originVertices[originTriangles[i + 1]];
             v1 = target.TransformPoint(v1);
-            Vector3 v2 = vertices[triangles[i + 2]];
+            Vector3 v2 = originVertices[originTriangles[i + 2]];
             v2 = target.TransformPoint(v2);
             
-            Debug.Log(
-                $"Set triangle {i} with v[0,1,2] world-positions: {v0} , {v1} , {v2} and plane position: {plane.distance}");
+            // Debug.Log(
+            //     $"Set triangle {i} with v[0,1,2] world-positions: {v0} , {v1} , {v2} and plane position: {plane.distance}");
 
             List<Vector3> currentIntersections = new List<Vector3>();
             List<Vector3> insideVertices = new List<Vector3>();
             List<Vector3> outsideVertices = new List<Vector3>();
+            List<Vector2> insideUVs = new List<Vector2>();
+            List<Vector2> outsideUVs = new List<Vector2>();
 
             // Classify each vertex of the triangle as inside or outside the plane
-            ClassifyVertex(v0, plane, insideVertices, outsideVertices, isPositive);
-            ClassifyVertex(v1, plane, insideVertices, outsideVertices, isPositive);
-            ClassifyVertex(v2, plane, insideVertices, outsideVertices, isPositive);
+            ClassifyVertex(v0, originUVs[originTriangles[i]], plane, insideVertices, outsideVertices, insideUVs, outsideUVs, isPositive);
+            ClassifyVertex(v1, originUVs[originTriangles[i+1]], plane, insideVertices, outsideVertices, insideUVs, outsideUVs, isPositive);
+            ClassifyVertex(v2, originUVs[originTriangles[i+2]], plane, insideVertices, outsideVertices, insideUVs, outsideUVs, isPositive);
 
+            // calculate normal vector of triangle
+            // use to define normal of new triangle
+            var normal = CalculateNormal(v0, v1, v2);
+            // DebugDrawer.DrawRay(v0, normal, Color.red, 5f);
+            
+            List<Vector2> totalUVs = new List<Vector2>();
+            totalUVs.AddRange(insideUVs);
+            totalUVs.AddRange(outsideUVs);
+            
             // Handle different cases based on the number of inside and outside vertices
             if (insideVertices.Count == 3)
             {
@@ -110,25 +155,26 @@ public static class MeshCutter
                 newVertices.Add(v0);
                 newVertices.Add(v1);
                 newVertices.Add(v2);
+                newUVs.AddRange(totalUVs);
             }
             else if (insideVertices.Count == 2 && outsideVertices.Count == 1)
             {
-                SplitTriangle(insideVertices[0], insideVertices[1], outsideVertices[0], plane, newVertices,
-                    newTriangles, currentIntersections);
+                SplitTriangle(insideVertices[0], insideVertices[1], outsideVertices[0], normal, totalUVs.ToArray(), plane, newVertices,
+                    newTriangles, newUVs,currentIntersections);
             }
             else if (insideVertices.Count == 1 && outsideVertices.Count == 2)
             {
                 // SplitTriangle(insideVertices[0], outsideVertices[0], outsideVertices[1], plane, newVertices,
                 //     newTriangles, currentIntersections);
-                SplitTriangle_Ver2(insideVertices[0], outsideVertices[0], outsideVertices[1], plane, newVertices,
-                    newTriangles, currentIntersections);
+                SplitTriangle_Case02(insideVertices[0], outsideVertices[0], outsideVertices[1], normal, totalUVs.ToArray(), plane, newVertices,
+                    newTriangles, newUVs, currentIntersections);
 
             }
 
             intersectionPoints.AddRange(currentIntersections);
         }
 
-        if (isPositive)
+        /*if (isPositive)
         {
             var content = "";
             content = "--  Positive Mesh \n";
@@ -145,12 +191,13 @@ public static class MeshCutter
                 content += index + " | ";
             }
             Debug.Log(content);
-        }
+        }*/
 
         // Create a new mesh with the generated vertices and triangles
         Mesh newMesh = new Mesh();
         newMesh.vertices = ConvertToObjectSpace(target, newVertices.ToArray()) ;
         newMesh.triangles = newTriangles.ToArray();
+        newMesh.uv = newUVs.ToArray();
         newMesh.RecalculateNormals();
         newMesh.RecalculateBounds();
 
@@ -158,52 +205,145 @@ public static class MeshCutter
     }
 
     // Method to classify a vertex as inside or outside the plane
-    private static void ClassifyVertex(Vector3 vertex, Plane plane, List<Vector3> inside, List<Vector3> outside,
+    private static void ClassifyVertex(Vector3 vertex, Vector2 uv, Plane plane, List<Vector3> inside, List<Vector3> outside, List<Vector2> insideUVs, List<Vector2> outsideUVs,
         bool positive)
     {
         if (positive == (plane.GetDistanceToPoint(vertex) >= 0))
+        {
             inside.Add(vertex);
+            insideUVs.Add(uv);
+        }
         else
+        {
             outside.Add(vertex);
+            outsideUVs.Add(uv);
+        }
+            
+            
     }
 
-    // Method to split a triangle by the plane
-    private static void SplitTriangle(Vector3 insideA, Vector3 insideB, Vector3 outside, Plane plane,
-        List<Vector3> newVertices, List<int> newTriangles, List<Vector3> intersections)
+    // Method to split a triangle by the plane with case [ 2 inside point and 1 outside points ]
+    private static void SplitTriangle(Vector3 insideA, Vector3 insideB, Vector3 outside,Vector3 normal, Vector2[] uvArray, Plane plane,
+        List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections)
     {
+        // find 2 intersection points
         Vector3 intersection1 = LinePlaneIntersection(insideA, outside, plane);
+        Vector2 intersectionUV1 = CalculateIntersectionUV(insideA, outside, uvArray[0], uvArray[2], intersection1);
         Vector3 intersection2 = LinePlaneIntersection(insideB, outside, plane);
+        Vector2 intersectionUV2 = CalculateIntersectionUV(insideB, outside, uvArray[1], uvArray[2], intersection2);
 
         intersections.Add(intersection1);
         intersections.Add(intersection2);
 
+        /*
+        // TO-DO: Set UV for new vertices
+        // [Process 01] add vertices and triangles
+        // add 3 new vertices which include 2 intersection points and 1 inside point
         int baseIndex = newVertices.Count;
         newVertices.Add(insideA);
         newVertices.Add(insideB);
         newVertices.Add(intersection1);
-        newTriangles.AddRange(new int[] { baseIndex, baseIndex + 1, baseIndex + 2 });
+        
+        // add 3 new UVs which include 2 intersection UVs and 1 inside UV
+        newUVs.AddRange( new Vector2[] { uvArray[0], uvArray[1], intersectionUV1 });
+        
+        // calculate normal of new triangle
+        var newNormal = CalculateNormal(insideA, insideB, intersection1);
+        var dot = Vector3.Dot(normal, newNormal); // compare normal of new triangle with normal of origin triangle
+        if(dot > 0) newTriangles.AddRange(new int[] { baseIndex, baseIndex + 1, baseIndex + 2 }); // if same direction then add normally with clock direction
+        else newTriangles.AddRange(new int[] { baseIndex, baseIndex + 2, baseIndex + 1 }); // if opposite direction then add reverse with counter-clock direction
+        */
 
+        BuildTriangle(insideA, insideB, intersection1, uvArray[0], uvArray[1], intersectionUV1, normal,
+                    newVertices, newTriangles, newUVs);
+        
+        /*// do same things like [process 01]
         newVertices.Add(insideB);
-        newVertices.Add(intersection2);
         newVertices.Add(intersection1);
-        newTriangles.AddRange(new int[] { baseIndex + 3, baseIndex + 4, baseIndex + 5 });
+        newVertices.Add(intersection2);
+        
+        // add 3 new UVs which include 2 intersection UVs and 1 inside UV
+        newUVs.AddRange( new Vector2[] { uvArray[1], intersectionUV1, intersectionUV2 });    
+        
+        var newNormal02 = CalculateNormal(insideB, intersection1, intersection2);
+        var dot02 = Vector3.Dot(normal, newNormal02); // compare normal of new triangle with normal of origin triangle
+        if(dot02 > 0) newTriangles.AddRange(new int[] { baseIndex + 3, baseIndex + 4, baseIndex + 5 });
+        else newTriangles.AddRange(new int[] { baseIndex + 3, baseIndex + 5, baseIndex + 4 });*/
+        
+        BuildTriangle(insideB, intersection1, intersection2, uvArray[1], intersectionUV1, intersectionUV2, normal,
+                    newVertices, newTriangles, newUVs);
     }
     
-    private static void SplitTriangle_Ver2(Vector3 inside, Vector3 outsideA, Vector3 outsideB, Plane plane,
-        List<Vector3> newVertices, List<int> newTriangles, List<Vector3> intersections)
+    // Method to split a triangle by the plane with case [ 1 inside point and 2 outside points ]
+    private static void SplitTriangle_Case02(Vector3 inside, Vector3 outsideA, Vector3 outsideB, Vector3 normal, Vector2[] uvArray, Plane plane,
+        List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections)
     {
         Vector3 intersection1 = LinePlaneIntersection(outsideA, inside, plane);
+        Vector2 intersectionUV1 = CalculateIntersectionUV(outsideA, inside, uvArray[1], uvArray[0], intersection1);
         Vector3 intersection2 = LinePlaneIntersection(outsideB, inside, plane);
+        Vector2 intersectionUV2 = CalculateIntersectionUV(outsideB, inside, uvArray[2], uvArray[0], intersection2);
 
         intersections.Add(intersection1);
         intersections.Add(intersection2);
-
-        int baseIndex = newVertices.Count;
-        newVertices.Add(intersection1);
-        newVertices.Add(intersection2);
-        newVertices.Add(inside);
-        newTriangles.AddRange(new int[] { baseIndex, baseIndex + 1, baseIndex + 2 });
         
+        BuildTriangle(intersection1, intersection2, inside, intersectionUV1, intersectionUV2, uvArray[0], normal, 
+                    newVertices, newTriangles, newUVs);
+        
+    }
+
+    private static void BuildTriangle(Vector3 v0, Vector3 v1, Vector3 v2, Vector2 uv0, Vector2 uv1, Vector2 uv2, Vector3 originNormal, 
+                                    List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs)
+    {
+        int baseIndex = newVertices.Count;
+
+        // Add vertices
+        newVertices.Add(v0);
+        newVertices.Add(v1);
+        newVertices.Add(v2);
+
+        // Add UVs
+        newUVs.Add(uv0);
+        newUVs.Add(uv1);
+        newUVs.Add(uv2);
+
+        // Calculate the normal of the new triangle
+        Vector3 newNormal = Vector3.Cross(v1 - v0, v2 - v0).normalized;
+
+        // Determine the winding order based on the dot product of the normals
+        if (Vector3.Dot(originNormal, newNormal) > 0)
+        {
+            // Same direction, add normally
+            newTriangles.Add(baseIndex);
+            newTriangles.Add(baseIndex + 1);
+            newTriangles.Add(baseIndex + 2);
+        }
+        else
+        {
+            // Opposite direction, add in reverse order
+            newTriangles.Add(baseIndex);
+            newTriangles.Add(baseIndex + 2);
+            newTriangles.Add(baseIndex + 1);
+        }
+    }
+
+
+    public static Vector3 CalculateNormal(Vector3 v0, Vector3 v1, Vector3 v2)
+    {
+        Vector3 edge1 = v1 - v0;
+        Vector3 edge2 = v2 - v0;
+        return Vector3.Cross(edge1, edge2).normalized;
+    }
+    
+    // NOTE: Intersection is must in line AB
+    public static Vector2 CalculateIntersectionUV(Vector3 A, Vector3 B, Vector2 uvA, Vector2 uvB, Vector3 intersection)
+    {
+        // Calculate the interpolation factor (t) for the intersection point
+        float t = Vector3.Distance(A, intersection) / Vector3.Distance(A, B);
+
+        // Interpolate the UV coordinates using the factor t
+        Vector2 intersectionUV = Vector2.Lerp(uvA, uvB, t);
+
+        return intersectionUV;
     }
 
     // Method to find the intersection point of a line segment and the plane
@@ -221,9 +361,13 @@ public static class MeshCutter
         GameObject newObject = new GameObject(name);
         newObject.transform.position = original.transform.position;
         newObject.transform.rotation = original.transform.rotation;
-        newObject.transform.localScale = original.transform.localScale;
+        newObject.transform.localScale = original.transform.lossyScale;
         newObject.AddComponent<MeshFilter>().mesh = mesh;
-        newObject.AddComponent<MeshRenderer>().material = original.GetComponent<MeshRenderer>().material;
+        Material material = null;
+        if(original.GetComponent<MeshRenderer>()) material = original.GetComponent<MeshRenderer>().material;
+        if (original.GetComponent<SkinnedMeshRenderer>()) material = original.GetComponent<SkinnedMeshRenderer>().material;
+            
+        newObject.AddComponent<MeshRenderer>().material = material;
         return newObject;
     }
 
