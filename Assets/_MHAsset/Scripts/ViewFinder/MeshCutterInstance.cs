@@ -104,7 +104,8 @@ public static class MeshCutter
         out List<Vector3> intersectionPoints)
     {
         intersectionPoints = new List<Vector3>();
-
+        var intersectionUVs = new List<Vector2>();
+        
         // datas from origin mesh
         List<Vector3> originVertices = new List<Vector3>(mesh.vertices); // take all vertices of origin mesh
         List<int> originTriangles = new List<int>(mesh.triangles); // take all triangles of origin mesh
@@ -127,8 +128,7 @@ public static class MeshCutter
             
             // Debug.Log(
             //     $"Set triangle {i} with v[0,1,2] world-positions: {v0} , {v1} , {v2} and plane position: {plane.distance}");
-
-            List<Vector3> currentIntersections = new List<Vector3>();
+            
             List<Vector3> insideVertices = new List<Vector3>();
             List<Vector3> outsideVertices = new List<Vector3>();
             List<Vector2> insideUVs = new List<Vector2>();
@@ -159,39 +159,24 @@ public static class MeshCutter
             }
             else if (insideVertices.Count == 2 && outsideVertices.Count == 1)
             {
-                SplitTriangle(insideVertices[0], insideVertices[1], outsideVertices[0], normal, totalUVs.ToArray(), plane, newVertices,
-                    newTriangles, newUVs,currentIntersections);
+                SplitTriangle_Case01(insideVertices[0], insideVertices[1], outsideVertices[0], normal, totalUVs.ToArray(), plane, newVertices,
+                    newTriangles, newUVs,intersectionPoints, intersectionUVs);
             }
             else if (insideVertices.Count == 1 && outsideVertices.Count == 2)
             {
-                // SplitTriangle(insideVertices[0], outsideVertices[0], outsideVertices[1], plane, newVertices,
+                // SplitTriangle_Case01(insideVertices[0], outsideVertices[0], outsideVertices[1], plane, newVertices,
                 //     newTriangles, currentIntersections);
                 SplitTriangle_Case02(insideVertices[0], outsideVertices[0], outsideVertices[1], normal, totalUVs.ToArray(), plane, newVertices,
-                    newTriangles, newUVs, currentIntersections);
+                    newTriangles, newUVs, intersectionPoints, intersectionUVs);
 
             }
-
-            intersectionPoints.AddRange(currentIntersections);
+            
         }
 
-        /*if (isPositive)
-        {
-            var content = "";
-            content = "--  Positive Mesh \n";
-            
-            content += " Vertices: ";
-            foreach (var pos in newVertices)
-            {
-                content += $"{pos} | ";
-            }
-            
-            content += "\n Triangles: ";
-            foreach (var index in newTriangles)
-            {
-                content += index + " | ";
-            }
-            Debug.Log(content);
-        }*/
+        //
+        Vector3 intersectionNormal = isPositive ? plane.normal.normalized * -1 : plane.normal.normalized ;
+        SplitTriangleFromIntersections(intersectionPoints, intersectionUVs, intersectionNormal,
+                                        newVertices, newUVs, newTriangles);
 
         // Create a new mesh with the generated vertices and triangles
         Mesh newMesh = new Mesh();
@@ -203,6 +188,8 @@ public static class MeshCutter
 
         return newMesh;
     }
+
+    
 
     // Method to classify a vertex as inside or outside the plane
     private static void ClassifyVertex(Vector3 vertex, Vector2 uv, Plane plane, List<Vector3> inside, List<Vector3> outside, List<Vector2> insideUVs, List<Vector2> outsideUVs,
@@ -223,8 +210,8 @@ public static class MeshCutter
     }
 
     // Method to split a triangle by the plane with case [ 2 inside point and 1 outside points ]
-    private static void SplitTriangle(Vector3 insideA, Vector3 insideB, Vector3 outside,Vector3 normal, Vector2[] uvArray, Plane plane,
-        List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections)
+    private static void SplitTriangle_Case01(Vector3 insideA, Vector3 insideB, Vector3 outside,Vector3 normal, Vector2[] uvArray, Plane plane,
+        List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections, List<Vector2> intersectionUVs)
     {
         // find 2 intersection points and calculate 2 intersection UVs
         Vector3 intersection1 = LinePlaneIntersection(insideA, outside, plane);
@@ -234,6 +221,8 @@ public static class MeshCutter
 
         intersections.Add(intersection1);
         intersections.Add(intersection2);
+        intersectionUVs.Add(intersectionUV1);
+        intersectionUVs.Add(intersectionUV2);
 
         // from information of new vertices and UVs, we can build 2 new triangles
         BuildTriangle(insideA, insideB, intersection1, uvArray[0], uvArray[1], intersectionUV1, normal,
@@ -245,7 +234,7 @@ public static class MeshCutter
     
     // Method to split a triangle by the plane with case [ 1 inside point and 2 outside points ]
     private static void SplitTriangle_Case02(Vector3 inside, Vector3 outsideA, Vector3 outsideB, Vector3 normal, Vector2[] uvArray, Plane plane,
-        List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections)
+        List<Vector3> newVertices, List<int> newTriangles, List<Vector2> newUVs,List<Vector3> intersections, List<Vector2> intersectionUVs)
     {
         // find 2 intersection points and calculate 2 intersection UVs
         Vector3 intersection1 = LinePlaneIntersection(outsideA, inside, plane);
@@ -255,10 +244,54 @@ public static class MeshCutter
 
         intersections.Add(intersection1);
         intersections.Add(intersection2);
+        intersectionUVs.Add(intersectionUV1);
+        intersectionUVs.Add(intersectionUV2);
         
         // from information of new vertices and UVs, we can build 1 new triangles
         BuildTriangle(intersection1, intersection2, inside, intersectionUV1, intersectionUV2, uvArray[0], normal, 
                     newVertices, newTriangles, newUVs);
+        
+    }
+    
+    private static void SplitTriangleFromIntersections(List<Vector3> intersections, List<Vector2> intersectionUVs, Vector3 normal,
+        List<Vector3> newVertices,  List<Vector2> newUVs, List<int> newTriangles)
+    {
+        // check if intersections and intersectionUVs not have the same size
+        if (intersections.Count != intersectionUVs.Count)
+        {
+            Debug.LogError($"Intersections and intersectionUVs have different size: {intersections.Count} and {intersectionUVs.Count}");
+            return;
+        }
+        
+        // remove duplicate intersections which have the same position
+        List<int> removeIndexs = new();
+        intersections = ListExtensions.RemoveDuplicates(intersections, removeIndexs);
+        ListExtensions.RemoveItemsByIndices(intersectionUVs, removeIndexs);
+        
+        if(intersections.Count < 3)  return;
+        
+        // find center point
+        Vector3 centerPoint = GetCenterPoint(intersections);
+        Vector2 centerUV = GetCenterPoint(intersectionUVs);
+        
+        // sort intersections follow clockwise
+        intersections = SortPointsFollowClockWise(intersections, centerPoint);
+        
+        
+        // use for loop to build new triangles with a vertex is center point and 2 other vertices are intersections
+        // DebugDrawer.DrawCircle(centerPoint, 0.05f, Color.red, 5f);
+        for (int i = 0; i < intersections.Count; i += 1)
+        {
+            // BuildTriangle(centerPoint, intersections[i], intersections[(i + 1) % intersections.Count], 
+            //     centerUV, intersectionUVs[i], intersectionUVs[(i + 1) % intersections.Count], normal, 
+            //     newVertices, newTriangles, newUVs);
+            BuildTriangle(centerPoint, intersections[i], intersections[(i + 1) % intersections.Count], 
+                Vector2.zero, Vector2.zero, Vector2.zero, normal, 
+                newVertices, newTriangles, newUVs);
+            
+            // DebugDrawer.DrawCircle(intersections[i], 0.05f, Color.yellow, 5f);
+            // DebugDrawer.DrawCircle(intersections[(i + 1) % intersections.Count], 0.05f, Color.yellow, 5f);
+        }
         
     }
 
@@ -297,6 +330,40 @@ public static class MeshCutter
         }
     }
 
+    private static List<Vector3> SortPointsFollowClockWise(List<Vector3> points, Vector3 centerPoint)
+    {
+        points.Sort((a, b) =>
+        {
+            float angleA = Mathf.Atan2(a.z - centerPoint.z, a.x - centerPoint.x);
+            float angleB = Mathf.Atan2(b.z - centerPoint.z, b.x - centerPoint.x);
+            return angleA.CompareTo(angleB);
+        });
+        return points;
+    }
+
+    private static Vector3 GetCenterPoint(List<Vector3> points)
+    {
+        Vector3 center = Vector3.zero;
+        foreach (Vector3 point in points)
+        {
+            center += point;
+        }
+        center /= points.Count;
+
+        return center;
+    }
+    private static Vector2 GetCenterPoint(List<Vector2> points)
+    {
+        Vector2 center = Vector2.zero;
+        foreach (Vector2 point in points)
+        {
+            center += point;
+        }
+        center /= points.Count;
+
+        return center;
+    }
+    
 
     public static Vector3 CalculateNormal(Vector3 v0, Vector3 v1, Vector3 v2)
     {
