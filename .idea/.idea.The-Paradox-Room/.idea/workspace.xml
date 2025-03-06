@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40ee00ab-f973-46ba-8734-bc59e604befc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBus.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBusExam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBusExam.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHub.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHub.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHubExam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHubExam.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/GameDirector.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundBuild.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundBuild.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundExam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundExam.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Portals.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BackGround_RenderTex.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BackGround_RenderTex.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BgQuad.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BgQuad.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_Output_Mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_Output_Mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_RenderTex.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_RenderTex.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Unlit.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Unlit.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Interactable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/Interactable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/PlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/VisualDrawDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/VisualDrawDebug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/VisualDrawDebug.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/VisualDrawDebug.cs.meta" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/29/c3e8ca24/Plane.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/85/f5a178a4/Material.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.10/Shaders/Unlit.shader" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2tiYWqvbaseDB25lnczgVun0Vkv" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;viewfinder__mechanic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="E:\Unity_System\Version Editor\2022.3.20f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;E:\unity Project\The-Paradox-Room&quot; -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\unity Project\The-Paradox-Room" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="E:\Unity_System\Version Editor\2022.3.20f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;E:\unity Project\The-Paradox-Room&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\unity Project\The-Paradox-Room" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40ee00ab-f973-46ba-8734-bc59e604befc" name="Changes" comment="" />
+      <created>1740836427532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740836427532</updated>
+      <workItem from="1740836451476" duration="3880000" />
+      <workItem from="1740886081400" duration="904000" />
+      <workItem from="1740906990496" duration="3413000" />
+      <workItem from="1740919781686" duration="9858000" />
+      <workItem from="1740968174139" duration="16239000" />
+      <workItem from="1740997417642" duration="3184000" />
+      <workItem from="1741008601456" duration="1259000" />
+      <workItem from="1741053313292" duration="25070000" />
+      <workItem from="1741186476225" duration="3755000" />
+      <workItem from="1741191359429" duration="87000" />
+      <workItem from="1741225909617" duration="8626000" />
+      <workItem from="1741238699344" duration="151000" />
+      <workItem from="1741243621240" duration="12029000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
