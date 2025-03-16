@@ -5,59 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40ee00ab-f973-46ba-8734-bc59e604befc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBus.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBusExam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBusExam.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHub.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHub.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHubExam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHubExam.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/GameDirector.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundBuild.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundBuild.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundEmitter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundEmitter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundExam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundExam.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Portals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BackGround_RenderTex.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BackGround_RenderTex.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BgQuad.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BgQuad.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_Output_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_Output_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_RenderTex.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_RenderTex.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Unlit.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Unlit.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/Interactable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Interactable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/Interactable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/PlayerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/VisualDrawDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/VisualDrawDebug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/VisualDrawDebug.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/VisualDrawDebug.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Portals.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,20 +31,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;viewfinder__mechanic&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "portal__mechanic",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="E:\Unity_System\Version Editor\2022.3.20f1\Editor\Unity.exe" />
@@ -161,6 +110,7 @@
       <workItem from="1741225909617" duration="8626000" />
       <workItem from="1741238699344" duration="151000" />
       <workItem from="1741243621240" duration="12029000" />
+      <workItem from="1742118048802" duration="6594000" />
     </task>
     <servers />
   </component>
