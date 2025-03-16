@@ -67,9 +67,11 @@ namespace MH.Portal
             if (_viewTexture == null || _viewTexture.width != Screen.width || _viewTexture.height != Screen.height)
             {
                 if(_viewTexture != null) _viewTexture.Release();
-                
-                _viewTexture = new RenderTexture(Screen.width, Screen.height, 0);
-                
+
+                //creates a new RenderTexture object with the current screen width, height, and a depth buffer of 24 bits.
+                //This RenderTexture is used to render the view from the portal camera.
+                _viewTexture = new RenderTexture(Screen.width, Screen.height, 24);
+                    
                 // set the texture to the camera
                 _portalCamera.targetTexture = _viewTexture;
                 
