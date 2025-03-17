@@ -88,11 +88,14 @@ public class TextureConverterWindow : EditorWindow
             if (texture != null)
             {
                 // Decompress and fix the texture (flip, correct colors), giả định texture gốc là sRGB
-                Texture2D fixedTexture = DecompressAndFixTexture(texture, isSourceSRGB: true);
+                // Texture2D fixedTexture = DecompressAndFixTexture(texture, isSourceSRGB: true);
+                // Texture2D fixedTexture = DecompressAndFixTexture(texture, isSourceSRGB: true);
+                Texture2D fixedTexture = DecompressAndFixTexture(texture, isSourceSRGB: true, isOutputSRGB:false);
 
                 // Lưu PNG
                 byte[] pngBytes = fixedTexture.EncodeToPNG();
                 File.WriteAllBytes(destinationPath, pngBytes);
+                
                 Debug.Log($"Converted {file} to {destinationPath}");
             }
             else
@@ -100,17 +103,89 @@ public class TextureConverterWindow : EditorWindow
                 Debug.LogError($"Failed to load file: {file}");
             }
         }
-
+        
         AssetDatabase.Refresh();
+        
+        // load png file to turn off sRGB
+        foreach (string file in textureFiles)
+        {
+            string extension = Path.GetExtension(file).ToLower();
+            if (extension != ".dds" && extension != ".tga") continue;
+
+            string relativePath = file.Substring(sourceFolderPath.Length + 1);
+            string destinationPath = Path.Combine(destinationFolderPath, Path.ChangeExtension(relativePath, ".png"));
+            SetSRGBForPNG(destinationPath, false);
+        }
+
+        
     }
+
+    // private Texture2D DecompressAndFixTexture(Texture2D source, bool isSourceSRGB = true)
+    // {
+    //     // Kiểm tra Color Space của dự án
+    //     bool isProjectLinear = PlayerSettings.colorSpace == ColorSpace.Linear;
+    //
+    //     // Tạo RenderTexture để giải nén texture
+    //     // Nếu texture gốc là sRGB, chúng ta cần đọc nó như sRGB để Unity tự động chuyển sang Linear
+    //     RenderTextureReadWrite colorSpace = isSourceSRGB ? RenderTextureReadWrite.sRGB : RenderTextureReadWrite.Linear;
+    //
+    //     RenderTexture renderTex = RenderTexture.GetTemporary(
+    //         source.width,
+    //         source.height,
+    //         0,
+    //         RenderTextureFormat.ARGB32,
+    //         colorSpace);
+    //
+    //     Graphics.Blit(source, renderTex);
+    //     RenderTexture previous = RenderTexture.active;
+    //     RenderTexture.active = renderTex;
+    //
+    //     // Đọc dữ liệu từ RenderTexture
+    //     // Nếu texture gốc là sRGB và dự án là Linear, Unity đã chuyển nó sang Linear
+    //     Texture2D readableTexture = new Texture2D(source.width, source.height, TextureFormat.ARGB32, false, true); // Linear texture
+    //     readableTexture.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
+    //     readableTexture.Apply();
+    //
+    //     RenderTexture.active = previous;
+    //     RenderTexture.ReleaseTemporary(renderTex);
+    //
+    //     // Tạo texture cuối cùng để lưu thành PNG
+    //     // Đánh dấu texture là Linear (linear = true) để EncodeToPNG không áp dụng gamma correction
+    //     Texture2D fixedTexture = new Texture2D(source.width, source.height, TextureFormat.RGBA32, false, true);
+    //     Color[] pixels = readableTexture.GetPixels();
+    //     Color[] fixedPixels = new Color[pixels.Length];
+    //
+    //     for (int y = 0; y < source.height; y++)
+    //     {
+    //         for (int x = 0; x < source.width; x++)
+    //         {
+    //             int sourceIndex = y * source.width + x;
+    //             int flippedIndex = (source.height - 1 - y) * source.width + x; // Flip vertically
+    //             Color color = pixels[sourceIndex];
+    //
+    //             // Nếu texture gốc là sRGB và dự án là Linear, màu sắc đã được chuyển sang Linear.
+    //             // Để bỏ qua gamma correction, chúng ta cần chuyển ngược về sRGB trước khi lưu.
+    //             if (isSourceSRGB && isProjectLinear)
+    //             {
+    //                 color.r = Mathf.LinearToGammaSpace(color.r);
+    //                 color.g = Mathf.LinearToGammaSpace(color.g);
+    //                 color.b = Mathf.LinearToGammaSpace(color.b);
+    //             }
+    //
+    //             // Đảo BGR sang RGB
+    //             fixedPixels[flippedIndex] = new Color(color.b, color.g, color.r, color.a);
+    //         }
+    //     }
+    //
+    //     fixedTexture.SetPixels(fixedPixels);
+    //     fixedTexture.Apply();
+    //
+    //     return fixedTexture;
+    // }
 
     private Texture2D DecompressAndFixTexture(Texture2D source, bool isSourceSRGB = true)
     {
-        // Kiểm tra Color Space của dự án
         bool isProjectLinear = PlayerSettings.colorSpace == ColorSpace.Linear;
-
-        // Tạo RenderTexture để giải nén texture
-        // Nếu texture gốc là sRGB, chúng ta cần đọc nó như sRGB để Unity tự động chuyển sang Linear
         RenderTextureReadWrite colorSpace = isSourceSRGB ? RenderTextureReadWrite.sRGB : RenderTextureReadWrite.Linear;
 
         RenderTexture renderTex = RenderTexture.GetTemporary(
@@ -124,17 +199,13 @@ public class TextureConverterWindow : EditorWindow
         RenderTexture previous = RenderTexture.active;
         RenderTexture.active = renderTex;
 
-        // Đọc dữ liệu từ RenderTexture
-        // Nếu texture gốc là sRGB và dự án là Linear, Unity đã chuyển nó sang Linear
-        Texture2D readableTexture = new Texture2D(source.width, source.height, TextureFormat.ARGB32, false, true); // Linear texture
+        Texture2D readableTexture = new Texture2D(source.width, source.height, TextureFormat.ARGB32, false, true);
         readableTexture.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
         readableTexture.Apply();
 
         RenderTexture.active = previous;
         RenderTexture.ReleaseTemporary(renderTex);
 
-        // Tạo texture cuối cùng để lưu thành PNG
-        // Đánh dấu texture là Linear (linear = true) để EncodeToPNG không áp dụng gamma correction
         Texture2D fixedTexture = new Texture2D(source.width, source.height, TextureFormat.RGBA32, false, true);
         Color[] pixels = readableTexture.GetPixels();
         Color[] fixedPixels = new Color[pixels.Length];
@@ -144,29 +215,131 @@ public class TextureConverterWindow : EditorWindow
             for (int x = 0; x < source.width; x++)
             {
                 int sourceIndex = y * source.width + x;
-                int flippedIndex = (source.height - 1 - y) * source.width + x; // Flip vertically
+                int flippedIndex = (source.height - 1 - y) * source.width + x;
                 Color color = pixels[sourceIndex];
 
-                // Nếu texture gốc là sRGB và dự án là Linear, màu sắc đã được chuyển sang Linear.
-                // Để bỏ qua gamma correction, chúng ta cần chuyển ngược về sRGB trước khi lưu.
                 if (isSourceSRGB && isProjectLinear)
                 {
-                    color.r = Mathf.LinearToGammaSpace(color.r);
-                    color.g = Mathf.LinearToGammaSpace(color.g);
-                    color.b = Mathf.LinearToGammaSpace(color.b);
+                    color.r = Mathf.GammaToLinearSpace(color.r);
+                    color.g = Mathf.GammaToLinearSpace(color.g);
+                    color.b = Mathf.GammaToLinearSpace(color.b);
                 }
 
-                // Đảo BGR sang RGB
-                fixedPixels[flippedIndex] = new Color(color.b, color.g, color.r, color.a);
+                fixedPixels[flippedIndex] = new Color(color.r, color.g, color.b, color.a);
             }
         }
-
+        
         fixedTexture.SetPixels(fixedPixels);
         fixedTexture.Apply();
 
         return fixedTexture;
     }
+    
+    // maybe isOutputSRGB = false not work
+    private Texture2D DecompressAndFixTexture(Texture2D source, bool isSourceSRGB = true, bool isOutputSRGB = true)
+    {
+        // Kiểm tra không gian màu của project
+        bool isProjectLinear = PlayerSettings.colorSpace == ColorSpace.Linear;
+        
+        // Cấu hình không gian màu cho RenderTexture dựa trên texture nguồn
+        RenderTextureReadWrite colorSpace = isSourceSRGB ? RenderTextureReadWrite.sRGB : RenderTextureReadWrite.Linear;
 
+        // Tạo RenderTexture tạm thời
+        RenderTexture renderTex = RenderTexture.GetTemporary(
+            source.width,
+            source.height,
+            0,
+            RenderTextureFormat.ARGB32,
+            colorSpace);
+
+        // Sao chép texture nguồn vào RenderTexture
+        Graphics.Blit(source, renderTex);
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTex;
+
+        // Tạo texture trung gian để đọc pixel, với không gian màu phù hợp với đầu ra
+        Texture2D readableTexture = new Texture2D(source.width, source.height, TextureFormat.ARGB32, false, !isOutputSRGB);
+        readableTexture.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
+        readableTexture.Apply();
+
+        // Khôi phục RenderTexture.active và giải phóng RenderTexture tạm thời
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTex);
+
+        // Tạo texture đầu ra với định dạng RGBA32 và không gian màu phù hợp
+        Texture2D fixedTexture = new Texture2D(source.width, source.height, TextureFormat.RGBA32, false, !isOutputSRGB);
+        Color[] pixels = readableTexture.GetPixels();
+        Color[] fixedPixels = new Color[pixels.Length];
+
+        // Xử lý pixel: lật ngược và chuyển đổi không gian màu nếu cần
+        for (int y = 0; y < source.height; y++)
+        {
+            for (int x = 0; x < source.width; x++)
+            {
+                int sourceIndex = y * source.width + x;
+                int flippedIndex = (source.height - 1 - y) * source.width + x;
+                Color color = pixels[sourceIndex];
+
+                // Chuyển đổi không gian màu dựa trên nguồn và đầu ra
+                if (isSourceSRGB && !isOutputSRGB && isProjectLinear)
+                {
+                    // Nguồn là sRGB, đầu ra là linear: chuyển từ sRGB sang linear
+                    color.r = Mathf.GammaToLinearSpace(color.r);
+                    color.g = Mathf.GammaToLinearSpace(color.g);
+                    color.b = Mathf.GammaToLinearSpace(color.b);
+                }
+                else if (!isSourceSRGB && isOutputSRGB && isProjectLinear)
+                {
+                    // Nguồn là linear, đầu ra là sRGB: chuyển từ linear sang sRGB
+                    color.r = Mathf.LinearToGammaSpace(color.r);
+                    color.g = Mathf.LinearToGammaSpace(color.g);
+                    color.b = Mathf.LinearToGammaSpace(color.b);
+                }
+
+                fixedPixels[flippedIndex] = new Color(color.r, color.g, color.b, color.a);
+            }
+        }
+        
+        // Áp dụng pixel vào texture đầu ra
+        fixedTexture.SetPixels(fixedPixels);
+        fixedTexture.Apply();
+
+        return fixedTexture;
+    }
+    
+    private void SetSRGBForPNG(string absolutePath, bool sRGB)
+    {
+        // Kiểm tra xem tệp có tồn tại hay không
+        if (!File.Exists(absolutePath))
+        {
+            Debug.LogError("Tệp không tồn tại tại đường dẫn: " + absolutePath);
+            return;
+        }
+
+        // Chuyển đổi đường dẫn tuyệt đối thành đường dẫn tương đối trong Assets
+        string relativePath = absolutePath;
+        if (string.IsNullOrEmpty(relativePath))
+        {
+            Debug.LogError("Đường dẫn không nằm trong thư mục Assets: " + absolutePath);
+            return;
+        }
+
+        // Lấy TextureImporter cho texture tại đường dẫn tương đối
+        TextureImporter textureImporter = AssetImporter.GetAtPath(relativePath) as TextureImporter;
+        if (textureImporter == null)
+        {
+            Debug.LogError("Không thể lấy TextureImporter cho: " + relativePath);
+            return;
+        }
+
+        // Đặt thuộc tính sRGBTexture
+        textureImporter.sRGBTexture = sRGB;
+
+        // Lưu và nhập lại texture để áp dụng thay đổi
+        AssetDatabase.ImportAsset(relativePath);
+        Debug.Log("Đã cập nhật sRGB cho " + relativePath + " thành " + sRGB);
+    }
+    
     private Texture2D LoadTextureDDS(byte[] ddsBytes)
     {
         byte[] formatBytes = new byte[4];

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eb6a06176373e4adfb1f8c101c2752d7
+guid: 0bb25d2b3c97d42cc87df06d130473ff
 IHVImageFormatImporter:
   externalObjects: {}
   textureSettings:
@@ -10,8 +10,8 @@ IHVImageFormatImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
-  isReadable: 1
-  sRGBTexture: 0
+  isReadable: 0
+  sRGBTexture: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   ignoreMipmapLimit: 0
