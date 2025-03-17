@@ -5,29 +5,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40ee00ab-f973-46ba-8734-bc59e604befc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBus.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBusExam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBusExam.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHub.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHub.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHubExam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventHub/EventHubExam.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/GameDirector.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundBuild.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundBuild.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundEmitter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundEmitter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundExam.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Sound/SoundExam.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Portals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/AnimatorCreatorWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/AnimatorCreatorWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/DdsToPngConvertWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/DdsToPngConvertWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/ImageConverterWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/ImageConverterWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/MergeMeshExamEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/MergeMeshExamEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/SaveFbxWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/SaveFbxWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/SaveObjWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Editor/SaveObjWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/MergeMesh/MergeMeshExam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/MergeMesh/MergeMeshExam.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.The-Paradox-Room/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The-Paradox-Room/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Blue3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Brown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Brown.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Cyan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Cyan.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Green2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Grey4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Purple.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_White.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Materials/Prototype Grid/Prototype_512x512_Yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_blue1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_blue1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_blue2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_blue2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_blue3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_blue3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_brown.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_brown.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_cyan.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_cyan.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_green1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_green1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_green2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_green2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_grey4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_orange.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_orange.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_purple.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_purple.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_red.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_red.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_white.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_white.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_yellow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModularFirstPersonController/DemoScene/Gridbox Prototype Materials/Resources/Textures/Prototype Grid/prototype_512x512_yellow.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Paladin/Paladin_MAT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Paladin/Paladin_MAT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/base.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/base.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/buton.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/buton.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/foto.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/foto.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/lens.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Models/Polaroid/lens.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BackGround_RenderTex.renderTexture" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BackGround_RenderTex.renderTexture.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/BgQuad.prefab" beforeDir="false" />
@@ -38,40 +111,78 @@
       <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Polaroid_RenderTex.renderTexture.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Unlit.mat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/Unlit.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/Interactable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Interactable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/Interactable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/PlayerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/VisualDrawDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/VisualDrawDebug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/VisualDrawDebug.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Superliminal/VisualDrawDebug.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/BackGround_RenderTex.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/BackGround_RenderTex.renderTexture.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/BgQuad.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/BgQuad.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Polaroid_Output_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Polaroid_Output_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Polaroid_Output_Mat.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Polaroid_Output_Mat.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Polaroid_RenderTex.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Polaroid_RenderTex.renderTexture.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Unlit.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Unlit.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Unlit.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Prefabs/ViewFinder/Unlit.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Superliminal_Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Superliminal_Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/Test.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scenes/ViewFinder.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/AngleExtension.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/DebugDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/DebugDraw/GizmosDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/GameDirector.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/AngleExtension.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/DebugDrawer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/DebugDraw/GizmosDrawer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensionExam.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Extensions/ListExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Scripts/Portals.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MHAsset/Setting/New Universal Render Pipeline Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MHAsset/Setting/New Universal Render Pipeline Asset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/29/c3e8ca24/Plane.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/85/f5a178a4/Material.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.10/Shaders/Unlit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/EventBus/EventBinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MHAsset/Scripts/Core/Extensions/ListExtensionExam.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_MHAsset/Scripts/Portal/Portal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.autodesk.fbx@5.1.1/Runtime/Scripts/FbxEmitter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.autodesk.fbx@5.1.1/Runtime/Scripts/FbxFileTexture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.autodesk.fbx@5.1.1/Runtime/Scripts/FbxObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.autodesk.fbx@5.1.1/Runtime/Scripts/FbxSurfaceMaterial.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.autodesk.fbx@5.1.1/Runtime/Scripts/FbxTexture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.formats.fbx@5.1.3/Editor/ConvertToNestedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.formats.fbx@5.1.3/Editor/ExportModelSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.formats.fbx@5.1.3/Editor/FbxExporter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.formats.fbx@5.1.3/Editor/IExportData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/29eb0bd6817948f2b5e6a9556872730dde00/df/e4ceeeb5/0200000Apdb17.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3e8c4b457af04cebae00bff58c6366331cbe00/b4/b482acba/Material.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe63294526274d489db8dc8b7303d2081e2400/08/6ed83c53/IMGUIContainer.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -84,21 +195,22 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;viewfinder__mechanic&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mac-mini&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\Unity_System\Version Editor\2022.3.20f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Hub/Editor/2023.2.20f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;E:\unity Project\The-Paradox-Room&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\unity Project\The-Paradox-Room" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -106,7 +218,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\Unity_System\Version Editor\2022.3.20f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Hub/Editor/2023.2.20f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;E:\unity Project\The-Paradox-Room&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\unity Project\The-Paradox-Room" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -161,12 +273,22 @@
       <workItem from="1741225909617" duration="8626000" />
       <workItem from="1741238699344" duration="151000" />
       <workItem from="1741243621240" duration="12029000" />
+      <workItem from="1741335728764" duration="6092000" />
+      <workItem from="1741575881528" duration="13000" />
+      <workItem from="1741607669978" duration="15000" />
+      <workItem from="1741666761880" duration="8092000" />
+      <workItem from="1741688136075" duration="3983000" />
+      <workItem from="1741748342215" duration="7218000" />
+      <workItem from="1741774866207" duration="5963000" />
+      <workItem from="1741918323960" duration="3383000" />
+      <workItem from="1741947254713" duration="1072000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -176,5 +298,9 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
